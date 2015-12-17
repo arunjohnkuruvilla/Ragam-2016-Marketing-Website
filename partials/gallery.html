@@ -1,0 +1,22 @@
+<div class="col-md-12 col-sm-12 col-xs-12"style="margin:0 0 250px 0;padding:0">
+<div class="col-md-12 col-sm-12 col-xs-12" style="height:250px;background-color:#252525;position:fixed;top:0;z-index:-1;margin:0">
+    <div class="symbol symbol-theme">
+                                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                                        <hr class="light small mar-top-50 no-margin-bottom">
+                                    </div>
+    </div>
+    </div>
+<div class="container">
+      <header class="clearfix">
+        <img src="assets/instagram.png" alt="Instagram logo">
+        
+      </header>
+      <div class="main">
+        <ul class="grid">
+            <li ng-repeat="image in data">
+                <img src="{{image.images.low_resolution.url}}">
+            </li>
+        </ul>
+
+      </div>
+    </div>
