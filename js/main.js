@@ -6,7 +6,7 @@
 /**
  * Main AngularJS Web Application
  */
-var app = angular.module('marketApp', ['ngRoute']);
+var app = angular.module('marketApp', ["ngRoute", "ngAnimate"]);
 
 /**
  * Configure the Routes

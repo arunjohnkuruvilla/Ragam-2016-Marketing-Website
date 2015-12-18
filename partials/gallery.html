@@ -1,22 +1,26 @@
-<div class="col-md-12 col-sm-12 col-xs-12"style="margin:0 0 250px 0;padding:0">
-<div class="col-md-12 col-sm-12 col-xs-12" style="height:250px;background-color:#252525;position:fixed;top:0;z-index:-1;margin:0">
-    <div class="symbol symbol-theme">
-                                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                                        <hr class="light small mar-top-50 no-margin-bottom">
-                                    </div>
+<div id="gallery-container">
+    <div class="col-md-12 col-sm-12 col-xs-12"style="margin:0 0 250px 0;padding:0">
+        <div class="col-md-12 col-sm-12 col-xs-12" style="height:250px;background-color:#252525;position:fixed;top:0;z-index:-1;margin:0">
+            <div class="symbol symbol-theme">
+                <span style="font-family:indian;font-size:6em">B</span>
+                <hr class="light small mar-top-50 no-margin-bottom">
+            </div>
+        </div>
     </div>
+    <div class="instagram col-md-12 col-sm-12 col-xs-12" style="background:#f6f6f6">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="page-header"><h1>Follow us on <a href="">Instagram</a></h1></div>
+                <div class="col-md-4 image-item" ng-repeat="image in data">
+                    <img class="img-responsive image-image" src="{{image.images.low_resolution.url}}">
+                    <div class="image-data" style="height:200px">
+                        <div class="image-caption" ng-if="image.caption != null">{{image.caption.text}}</div>
+                        <p>
+                            <span style="margin-right:20px">{{image.likes.count}} likes</span>
+                            <span>{{image.comments.count}} comments</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-<div class="container">
-      <header class="clearfix">
-        <img src="assets/instagram.png" alt="Instagram logo">
-        
-      </header>
-      <div class="main">
-        <ul class="grid">
-            <li ng-repeat="image in data">
-                <img src="{{image.images.low_resolution.url}}">
-            </li>
-        </ul>
-
-      </div>
-    </div>
+</div>

@@ -1,15 +1,24 @@
 @font-face {
-    font-family: 'canstop';
-    src:url('../fonts/canstop.TTF');
+    font-family: canstop;
+    src:url(../fonts/canstop.TTF);
 }
 @font-face {
     font-family: roboto;
     src: url(../fonts/Roboto-Light.ttf);
 }
+@font-face {
+    font-family: gotham;
+    src: url(../fonts/Gotham-Medium-Regular.ttf);
+}
+@font-face {
+    font-family: indian;
+    src: url(../fonts/WedSymbolys.TTF);
+}
 html, body{
     width: 100%;
     height: 100%;
-    font-family: roboto;
+    font-family: gotham;
+    font-weight: 700;
 }
 .ng-view {
   height: 100%;
@@ -409,13 +418,13 @@ html, body{
     }
 }
 nav .button {
-    background: rgba(0,0,0,0.7);
+    background: #252525;
     border:none;
 }
 
 .button {
     min-width: 150px;
-    max-width: 250px;
+    max-width: 300px;
     margin: 1em;
     padding: 1em 2em;
     border: none;
@@ -546,15 +555,11 @@ nav .button--wayra:hover {
     border-color: #ccc;
 }
 .button--wayra:hover {
-    color: #fff;
+    color: #252525;
     font-weight: 700;
     border-color: #ccc;
 }
-.button--wayra.button--inverted:hover {
-    color: #000;
-    font-weight: 700;
-    border-color: #fff;
-}
+
 .button--wayra:hover::before {
     opacity: 1;
     background-color: #ccc;
@@ -656,9 +661,6 @@ nav .button--wayra:hover {
   box-shadow: none !important;
   outline: 0 none !important;
   transition: none !important;
-}
-.contact-container {
-  width: 100%;
 }
 /* ==========================================================================
    Footer
@@ -1176,10 +1178,26 @@ nav .button--wayra:hover {
 .about-us-box .about-us-social a { color: #ddd; }
 .about-us-box .about-us-social a:hover, .about-us-box .about-us-social a:focus { color: #e8643e; }
 
+/* ==========================================================================
+    SYMBOLS
+============================================================================= */
 .symbol {
   position:relative;
 }
 .symbol span {
+  display: inline-block;
+  position: absolute;
+    top: 0;
+  left:50%;
+  margin-top:-0.5em;
+  margin-left:-1.5em;
+    font-size: 3em;
+    background: #fff;
+    padding: 0 1em;
+    color: #e1e1e1;
+    font-weight: 100;
+}
+.symbol i {
   display: inline-block;
   position: absolute;
     top: 0;
@@ -1244,10 +1262,75 @@ nav .button--wayra:hover {
 .symbol.symbol-theme span.pe-7s-icon {
   font-weight:normal;
 }
-
-/*Small Horizontal Rules*/
-
 hr.small {
   margin-top: 125px;
   width: 75%;
+}
+/* ==========================================================================
+    ABOUT
+============================================================================= */
+#about-container {
+    height:90%
+}
+/* ==========================================================================
+    CONTACTS
+============================================================================= */
+
+#contact-container {
+    height:90%
+}
+#contact-container .page-header {
+    border: none;
+    margin: 20px 0 0px;
+}
+#contact-container .symbol.symbol-theme i { 
+    font-size: 1.4em;
+    color: #000;
+}
+#contact-container .team-container .symbol.symbol-theme i {
+    background-color: #f6f6f6;
+}
+#contact-container .mail-container .symbol.symbol-theme i {
+    background-color: #fff;
+}
+#contact-container hr.small {
+    margin-top: 0;
+    width: 100%;
+    margin-bottom: 40px;
+}
+#contact-container .form-control {
+    background-color: #f6f6f6;
+}
+#contact-container .btn {
+    border: none;
+    border-radius: 0;
+    background: #252525;
+    padding: 0.75em;
+    width: 100%;
+    margin-top: 10px;
+}
+/* ==========================================================================
+    GALLERY
+============================================================================= */
+#gallery-container .image-item {
+    
+}
+#gallery-container .image-image {
+    width: 100%;
+}
+#gallery-container .image-caption {
+    margin-bottom: 50px;
+}
+#gallery-container .image-data {
+    padding: 20px;
+    background-color: #d3d3d3;
+    margin-bottom: 20px;
+}
+#gallery-container .instagram .page-header {
+    font-size: 2em;
+    border:none;
+}
+#gallery-container .instagram .page-header a {
+    text-decoration: none;
+    color: #9b6954;
 }
