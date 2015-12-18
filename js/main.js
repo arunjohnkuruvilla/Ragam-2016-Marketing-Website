@@ -1,39 +1,57 @@
-/**
- * AngularJS Tutorial 1
- * @author Nick Kaye <nick.c.kaye@gmail.com>
- */
-
-/**
- * Main AngularJS Web Application
- */
 var app = angular.module('marketApp', ["ngRoute", "ngAnimate"]);
 
 /**
- * Configure the Routes
+ * Routes Configuration
  */
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-  $routeProvider
-    // Home
-    .when("/", {templateUrl: "partials/home.html", controller: "PageController"})
-    // About
-    .when("/about", {templateUrl: "partials/about.html", controller: "AboutController"})
-    // Sponsors
-    .when("/previous_sponsors", {templateUrl: "partials/sponsors.html", controller: "SponsorController"})
-    // Gallery
-    .when("/gallery", {templateUrl: "partials/gallery.html", controller: "GalleryController"})
-    // Contact Us
-    .when("/contactus", {templateUrl: "partials/contact.html", controller: "ContactController"})
-    // Pages
-    .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageController"});
-    // use the HTML5 History API
+    $routeProvider
+        // Home
+        .when("/", {templateUrl: "partials/home.html", controller: "PageController"})
+        // About
+        .when("/about", {templateUrl: "partials/about.html", controller: "AboutController"})
+        // Sponsors
+        .when("/previous_sponsors", {templateUrl: "partials/sponsors.html", controller: "SponsorController"})
+        // Gallery
+        .when("/gallery", {templateUrl: "partials/gallery.html", controller: "GalleryController"})
+        // Contact Us
+        .when("/contactus", {templateUrl: "partials/contact.html", controller: "ContactController"})
+        // Pages
+        .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageController"});
 }]);
-app.config(['$httpProvider', function($httpProvider) {
-        $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
-    }
-]);
+
+app.run(function ($rootScope, $location,$route, $timeout) {
+
+    $rootScope.config = {};
+    $rootScope.config.app_url = $location.url();
+    $rootScope.config.app_path = $location.path();
+    $rootScope.layout = {};
+    $rootScope.layout.loading = false;
+
+    $rootScope.$on('$routeChangeStart', function () {
+        console.log('$routeChangeStart');
+        //show loading gif
+        $timeout(function(){
+          $rootScope.layout.loading = true;          
+        });
+    });
+    $rootScope.$on('$routeChangeSuccess', function () {
+        console.log('$routeChangeSuccess');
+        //hide loading gif
+        $timeout(function(){
+          $rootScope.layout.loading = false;
+        }, 200);
+    });
+    $rootScope.$on('$routeChangeError', function () {
+
+        //hide loading gif
+        alert('wtff');
+        $rootScope.layout.loading = false;
+
+    });
+});
+
 /**
- * Controls all other Pages
+ * Controller for About Page
  */
 app.controller('AboutController', function() {
     console.log("Reached About Controller");                            //Remove in production
@@ -41,7 +59,17 @@ app.controller('AboutController', function() {
 
 app.controller('SponsorController', function() {
     console.log("Reached Sponsor Controller");                          //Remove in production
-    new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+    
+    $('.sponsor-item').hover(
+          function() {
+            var $media = $(this);
+            var height = $media.height();
+            $media.stop().animate({ marginTop: -(height - 82) }, 1000);
+          }, function() {
+            var $media = $(this);
+            $media.stop().animate({ marginTop: '0px' }, 1000);
+          }
+        );
 });
 
 app.controller('GalleryController', ['$scope','$http', function($scope, $http) {
@@ -56,20 +84,29 @@ app.controller('GalleryController', ['$scope','$http', function($scope, $http) {
 
 app.controller('ContactController', function() {
     console.log("Reached Contact Controller");                          //Remove in production
-            var head = document.getElementsByTagName('head')[0];
-
-// Save the original method
-var insertBefore = head.insertBefore;
-
-// Replace it!
-head.insertBefore = function (newElement, referenceElement) {
     
-    if (newElement.href && newElement.href.indexOf('https://fonts.googleapis.com/css?family=Roboto') === 0) {
-        return;
-    }
-    
-    insertBefore.call(head, newElement, referenceElement);
-};
+    loadMap();
+
+    $(window).scroll(function () {
+        // set distance user needs to scroll before we start fadeIn
+         if ($(this).scrollTop() > 150) {
+                $('.navbar').fadeIn();
+            } else {
+                $('.navbar').fadeOut();
+            }
+        });
+});
+
+function loadMap() {
+    var head = document.getElementsByTagName('head')[0];
+    var insertBefore = head.insertBefore;
+
+    head.insertBefore = function (newElement, referenceElement) {
+        if (newElement.href && newElement.href.indexOf('https://fonts.googleapis.com/css?family=Roboto') === 0) {
+            return;
+        }
+        insertBefore.call(head, newElement, referenceElement);
+    };
     function initialize() {
         var mapCanvas = document.getElementById('map');
         var mapOptions = {
@@ -83,8 +120,7 @@ head.insertBefore = function (newElement, referenceElement) {
         var map = new google.maps.Map(mapCanvas, mapOptions)
     }
     google.maps.event.addDomListener(window, 'load', initialize);
-});
-
+}
 app.controller('PageController', function (/* $scope, $location, $http */) {
   console.log("Page Controller reporting for duty.");
 
