@@ -204,7 +204,8 @@ html, body{
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: -1;   
+  z-index: -1;  
+  background-size: 100%; 
 }
 
 .effect-airbnb .page-container {
@@ -676,7 +677,131 @@ hr.small {
     ABOUT
 ============================================================================= */
 #about-container {
-    height:90%
+    background-color: #fff;
+}
+/* ==========================================================================
+   Counters
+============================================================================= */
+
+.nc-simple {
+    color: #000;
+    padding-bottom: 2em;
+}
+.nc-simple.text-light,
+.text-light .nc-simple {
+    color: #fff;
+}
+.nc-simple span.counter-icon {
+    font-size: 50px;
+    margin-bottom:30px;
+}
+.nc-simple span.counter, .nc-simple span.counter-extend {
+    font-size: 30px;
+    font-weight: bold;
+}
+.nc-simple h3 {
+    margin: 5px 0 0;
+    text-transform: uppercase;
+}
+span.nc-text {
+    font-size: 16px;
+    font-weight: bold;
+}
+.nc-lined {
+    padding: 0;
+}
+.nc-style-4 span, 
+.nc-lined span {
+    font-size: 50px;
+    font-weight: bold;
+}
+.nc-lined span.counter-icon {
+    font-weight: normal;
+    border-bottom: 3px solid #000;
+    min-width: 30%;
+    padding-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nc-lined.text-light span.counter-icon,
+.text-light .nc-lined span.counter-icon,
+.nc-lined .text-light span.counter-icon {
+    border-color: #fff;
+}
+.nc-lined h1,
+.nc-lined h2,
+.nc-lined h3,
+.nc-lined h4,
+.nc-lined h5,
+.nc-lined h6 {
+    margin: 0;
+}
+.nc-style-4 h5, .nc-lined h5 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.counter-border {
+    border-right: 1px solid #e6e6e6;
+}
+.shrink {
+    background-color: #fff !important;
+}
+.navbar-inverse .navbar-nav>.active>a {
+    color: #ccc;
+}
+.portfolio-box .portfolio-box-caption {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    background: rgba(15,15,15,0.7);
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+    padding: 0 15px;
+}
+
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+    font-size: 18px;
+}
+
+.portfolio-box:hover .portfolio-box-caption {
+    opacity: 1;
+}
+
+@media(min-width:768px) {
+    .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+        font-size: 16px;
+    }
+
+    .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+        font-size: 22px;
+    }
+}
+.portfolio-item {
+    padding: 0;
 }
 /* ==========================================================================
     CONTACTS
@@ -748,5 +873,23 @@ hr.small {
     background-color: #fff;
 }
 #sponsor-container .sponsor-item {
-    margin-bottom: 20px;
+    margin:0 10px 20px 10px;
+    overflow: hidden;
+    height:250px;
+    width: 250px;
+}
+#sponsor-container .sponsor-image {
+    width: 250px;
+    height: 250px;
+}
+#sponsor-container img {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 0;
+    left: 0;
+}
+#sponsor-container .sponsor-content {
+    position: absolute;height: 250px;width: 250px;top: 0;left:0;z-index:0;background: #edeff0;  
+    padding: 100px 8px 8px;
 }
