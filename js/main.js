@@ -54,9 +54,15 @@ app.run(function ($rootScope, $location,$route, $timeout) {
  * Controller for About Page
  */
 app.controller('AboutController', function() {
+    $scope.$on('$viewContentLoaded', function(){
+        alert("About Content loaded");
+    });
+
+    window.onload = function () { alert("It's loaded!") }
     console.log("Reached About Controller");                            //Remove in production
 
     loadNavigation();
+
 });  
 
 app.controller('SponsorController', function() {
@@ -196,5 +202,11 @@ app.controller('PageController', function (/* $scope, $location, $http */) {
     } 
 
     init();
-    window.onload = function () { alert("It's loaded!") }
+    
 });
+
+app.controller("MainController", ['$scope', function($scope) {
+    $scope.$on('$viewContentLoaded', function(){
+        alert("Main Content loaded");
+    });
+}]);
