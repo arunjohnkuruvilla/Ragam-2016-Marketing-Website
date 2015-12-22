@@ -17,7 +17,7 @@
 html, body{
     width: 100%;
     height: 100%;
-    font-family: gotham;
+    font-family: roboto;
     font-weight: 700;
 }
 .ng-view {
@@ -673,6 +673,35 @@ hr.small {
   margin-top: 125px;
   width: 75%;
 }
+.shrink {
+    background-color: #fff !important;
+}
+.navbar-inverse .navbar-nav>.active>a {
+    color: #ccc;
+}
+
+/* ==========================================================================
+    Header
+============================================================================= */
+.page-headline {
+    display: block;
+    margin: 10px 0 25px 0;
+    border-bottom: 1px dotted #e4e9f0;
+}
+.page-headline h2, .page-headline h3, .page-headline h1 {
+    margin: 0 0 -2px 0;
+    padding-bottom: 5px;
+    font-size: 3em;
+    padding-top: 1em;
+    display: inline-block;
+    border-bottom: 2px solid #252525;
+}
+
+.one-edge-shadow {
+    -webkit-box-shadow: 0 8px 6px -6px black;
+       -moz-box-shadow: 0 8px 6px -6px black;
+            box-shadow: 0 8px 6px -6px black;
+}
 /* ==========================================================================
     ABOUT
 ============================================================================= */
@@ -682,10 +711,10 @@ hr.small {
 /* ==========================================================================
    Counters
 ============================================================================= */
-
 .nc-simple {
     color: #000;
-    padding-bottom: 2em;
+    padding-bottom: 4em;
+    padding-top: 4em;
 }
 .nc-simple.text-light,
 .text-light .nc-simple {
@@ -743,66 +772,55 @@ span.nc-text {
 .counter-border {
     border-right: 1px solid #e6e6e6;
 }
-.shrink {
-    background-color: #fff !important;
+/* ==========================================================================
+    About us Social Icons
+============================================================================= */
+.follow-us {
+text-align:center;
 }
-.navbar-inverse .navbar-nav>.active>a {
-    color: #ccc;
+
+#footer h3 { 
+    color: #555;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 36px;
 }
-.portfolio-box .portfolio-box-caption {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
+#footer p {
+    color: #888;
+    width: 60%;
+    margin: 0 auto 40px;
+    margin-top: 30px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#footer { 
+background-color: #fff; 
+padding: 60px 0 60px; 
+text-align:center; 
+}
+
+.social-icon {
     text-align: center;
-    color: #fff;
-    opacity: 0;
-    background: rgba(15,15,15,0.7);
-    -webkit-transition: all .35s;
-    -moz-transition: all .35s;
-    transition: all .35s;
+    font-size: 36px;
+    line-height: 76px;
+    color: #323A45;
+    padding: 5px;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+.social-icon :hover {
+    color: #0dc0c0;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
 }
 
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    text-align: center;
-    transform: translateY(-50%);
-}
-
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
-    padding: 0 15px;
-}
-
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
-    font-size: 18px;
-}
-
-.portfolio-box:hover .portfolio-box-caption {
-    opacity: 1;
-}
-
-@media(min-width:768px) {
-    .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
-        font-size: 16px;
-    }
-
-    .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
-        font-size: 22px;
-    }
-}
-.portfolio-item {
-    padding: 0;
-}
 /* ==========================================================================
     CONTACTS
 ============================================================================= */
@@ -893,3 +911,6 @@ span.nc-text {
     position: absolute;height: 250px;width: 250px;top: 0;left:0;z-index:0;background: #edeff0;  
     padding: 100px 8px 8px;
 }
+
+
+
