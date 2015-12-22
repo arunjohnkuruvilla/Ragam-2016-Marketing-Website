@@ -206,7 +206,8 @@ app.controller('PageController', function (/* $scope, $location, $http */) {
 });
 
 app.controller("MainController", ['$scope', function($scope) {
+    var loading = document.getElementById ( "loader" ) ;
     $scope.$on('$viewContentLoaded', function(){
-        alert("Main Content loaded");
+        loading.style.visibility = "hidden"
     });
 }]);
