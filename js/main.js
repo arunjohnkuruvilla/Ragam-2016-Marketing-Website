@@ -196,4 +196,5 @@ app.controller('PageController', function (/* $scope, $location, $http */) {
     } 
 
     init();
+    window.onload = function () { alert("It's loaded!") }
 });
