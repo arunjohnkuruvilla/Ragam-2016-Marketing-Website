@@ -20,26 +20,14 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 }]);
 
 app.run(function ($rootScope, $location,$route, $timeout) {
-
-    $rootScope.config = {};
-    $rootScope.config.app_url = $location.url();
-    $rootScope.config.app_path = $location.path();
-    $rootScope.layout = {};
-    $rootScope.layout.loading = false;
+    var loading = document.getElementById ( "loader" ) ;
 
     $rootScope.$on('$routeChangeStart', function () {
         console.log('$routeChangeStart');
-        //show loading gif
-        $timeout(function(){
-          $rootScope.layout.loading = true;          
-        });
+        loading.style.visibility = "hidden";
     });
     $rootScope.$on('$routeChangeSuccess', function () {
-        console.log('$routeChangeSuccess');
-        //hide loading gif
-        $timeout(function(){
-          $rootScope.layout.loading = false;
-        }, 200);
+
     });
     $rootScope.$on('$routeChangeError', function () {
 
@@ -54,11 +42,7 @@ app.run(function ($rootScope, $location,$route, $timeout) {
  * Controller for About Page
  */
 app.controller('AboutController', function() {
-    $scope.$on('$viewContentLoaded', function(){
-        alert("About Content loaded");
-    });
 
-    window.onload = function () { alert("It's loaded!") }
     console.log("Reached About Controller");                            //Remove in production
 
     loadNavigation();
@@ -208,6 +192,7 @@ app.controller('PageController', function (/* $scope, $location, $http */) {
 app.controller("MainController", ['$scope', function($scope) {
     var loading = document.getElementById ( "loader" ) ;
     $scope.$on('$viewContentLoaded', function(){
+        console.log("loader hidden");
         loading.style.visibility = "hidden"
     });
 }]);

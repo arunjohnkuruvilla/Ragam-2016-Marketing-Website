@@ -608,11 +608,11 @@ nav .button--wayra:hover {
   display: inline-block;
   position: absolute;
     top: 0;
-  left:50%;
+  left:45%;
   margin-top:-0.5em;
   margin-left:-1.5em;
     font-size: 3em;
-    background: #fff;
+    background: #252525;
     padding: 0 1em;
     color: #e1e1e1;
     font-weight: 100;
@@ -862,18 +862,25 @@ text-align:center;
     GALLERY
 ============================================================================= */
 #gallery-container .image-item {
-    
+  padding: 0 5px 0 5px; 
+
+}
+#gallery-container .image-item a {
+  text-decoration: none;
+  color: #000;
 }
 #gallery-container .image-image {
     width: 100%;
 }
 #gallery-container .image-caption {
     margin-bottom: 50px;
+
 }
 #gallery-container .image-data {
     padding: 20px;
     background-color: #d3d3d3;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    font-family: gotham;
 }
 #gallery-container .instagram .page-header {
     font-size: 2em;

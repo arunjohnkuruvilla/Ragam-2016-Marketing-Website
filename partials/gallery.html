@@ -11,14 +11,17 @@
         <div class="container">
             <div class="col-md-12">
                 <div class="page-headline"><h2>Gallery</h2></div>
-                <div class="col-md-4 image-item" ng-repeat="image in data">
-                    <img class="img-responsive image-image" src="{{image.images.low_resolution.url}}">
-                    <div class="image-data" style="height:200px">
-                        <div class="image-caption" ng-if="image.caption != null">{{image.caption.text}}</div>
-                        <p>
-                            <span style="margin-right:20px">{{image.likes.count}} likes</span>
-                            <span>{{image.comments.count}} comments</span></p>
-                    </div>
+                <div class="col-md-4 image-item" ng-repeat="image in data" ng-if="image.type!='video'">
+                    <a href="{{image.link}}" target="_blank">
+                        <img class="img-responsive image-image" src="{{image.images.standard_resolution.url}}">
+                        <div class="image-data" style="height:300px">
+                            <p>
+                                <span style="margin-right:20px"><span style="color:#9b6954">{{image.likes.count}}</span> likes</span>
+                                <span><span style="color:#9b6954">{{image.comments.count}}</span> comments</span>
+                            </p>
+                            <div class="image-caption" ng-if="image.caption != null">{{image.caption.text}}</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
