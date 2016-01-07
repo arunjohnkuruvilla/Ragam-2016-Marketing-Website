@@ -10,18 +10,25 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="market">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Keywords" content="Ragam, NITC, National Institute of Technology Calicut, Calicut">
+    <meta name="description" content="Annual Cultural Festival of National Institute of Technology Calicut"/>
+    
+    <title>Ragam '16</title>
 
-    <!-- Vendor: Bootstrap Stylesheets http://getbootstrap.com -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <!-- Vendor: Bootstrap Stylesheets-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-    <!-- Our Website CSS Styles -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <!-- Custom CSS Styles -->
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-    <script src="js/modernizr.custom.25376.js"></script>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+    
+    <link rel="stylesheet" type="text/css" href="css/sidebar.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
 </head>
 <body ng-app="marketApp" ng-controller="MainController">
@@ -31,31 +38,43 @@
     <![endif]-->
 
     <!--Navigation Bar-->
-    <nav class="navbar navbar-inverse navbar-fixed-top" style="display:none">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-header">
-            <a class="navbar-brand-centered" href="#/"><img src="images/ragam1.png" class="img-responsive" style="width:100%"></a>
+            <a class="navbar-brand-centered" style="display:none" href="#/"><img src="images/ragam1.png" class="img-responsive" style="width:100%"></a>
         </div> 
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li style="padding-left:2em;font-size:2em"><a href="#/"><i class="fa fa-arrow-left"></i></a></li>
+            </ul>
+        </div>
     </nav>
+    <audio autoplay loop id="theme">
+        <source src="audio/ragam.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <div id="loader" style="position:fixed;height:100%;width:100%;top:0;bottom:0;background:#fff;z-index:9999"></div>
+    
     <div class="ng-view"></div>
 
-    
-    <!-- Vendor: Javascripts -->
+    <!-- Vendor: Jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+    <!-- Vendor: Bootstrap -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/masonry.pkgd.min.js"></script>
-    <script src="js/cbpGridGallery.js"></script>
-    <!-- Vendor: Angular, followed by our custom Javascripts -->
-    <script src="js/angular.min.js"></script>
-    <script src="js/angular-route.min.js"></script>
-    <script src="js/angular-animate.js"></script>
 
-    <script src="js/classie.js"></script>
+    <!-- Vendor: AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-animate.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/classie/1.0.1/classie.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <!-- Our Website Javascripts -->
-    <script src="js/main.js"></script>
 
+    <!-- Custom Scripts -->
+    <script src="js/main.js"></script>
+    
     
 
 </body>

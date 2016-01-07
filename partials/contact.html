@@ -1,7 +1,7 @@
-<div class="col-md-12 col-sm-12 col-xs-12" style="margin:0 0 250px 0;padding:0" >
+<div class="col-md-12 col-sm-12 col-xs-12"style="margin:0 0 250px 0;padding:0">
     <div class="col-md-12 col-sm-12 col-xs-12" style="height:250px;background-color:#252525;position:fixed;top:0;z-index:-1;margin:0">
         <div class="symbol symbol-theme">
-            <span style="font-family:indian;font-size:6em">H</span>
+            <span style="width:16%"><img src="images/ragam1.png" class="img-responsive" ></span>
             <hr class="light small mar-top-50 no-margin-bottom">
         </div>
     </div>
@@ -17,41 +17,41 @@
                     <hr class="light small mar-top-50 no-margin-bottom">
                 </div>
 
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4>Shyamkrishnan Ravindran<br/><small>CULTURAL SECRETARY</small></h4>
-                    <p style="margin:0">shyam@ragam.org.in</p>
-                    <p>(+91) 9876543210</p>
+                <div class="col-md-12 col-sm-12 col-xs-12 contact">
+                    <h4>Shyamkrishnan R<br/><small>CULTURAL SECRETARY</small></h4>
+                    <p style="margin:0">shyamkrishnan@ragam.org.in</p>
+                    <p>(+91) 8281401025</p>
                 </div>
 
                 <div class="section-header"><h3>Marketing</h3></div>
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12 contact">
                     <div class="col-md-4 col-sm-12 col-xs-12">
                         <h4>Mathews K Tom</h4>
-                        <p style="margin:0">shyam@ragam.org.in</p>
-                        <p>(+91) 9876543210</p>
+                        <p style="margin:0">mathews@ragam.org.in</p>
+                        <p>(+91) 9446930717</p>
                     </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-md-4 col-sm-12 col-xs-12 contact">
                         <h4>Tarun Tom</h4>
-                        <p style="margin:0">shyam@ragam.org.in</p>
-                        <p>(+91) 9876543210</p>
+                        <p style="margin:0">taruntom@ragam.org.in</p>
+                        <p>(+91) 9605559215</p>
                     </div>
-                    <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-md-4 col-sm-12 col-xs-12 contact">
                         <h4>Isa Rahman</h4>
-                        <p style="margin:0">shyam@ragam.org.in</p>
-                        <p>(+91) 9876543210</p>
+                        <p style="margin:0">isarahman@ragam.org.in</p>
+                        <p>(+91) 9746085066</p>
                     </div>
                 </div>
                 <div class="section-header"><h3>Public Relations</h3></div>
                 <div class="col-md-12">
-                    <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="col-md-6 col-sm-12 col-xs-12 contact">
                         <h4>Vishal Satheeshan</h4>
-                        <p style="margin:0">shyam@ragam.org.in</p>
-                        <p>(+91) 9876543210</p>
+                        <p style="margin:0">vishal@ragam.org.in</p>
+                        <p>(+91) 8129297995</p>
                     </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <h4>Vishal Satheeshan</h4>
-                        <p style="margin:0">shyam@ragam.org.in</p>
-                        <p>(+91) 9876543210</p>
+                    <div class="col-md-6 col-sm-12 col-xs-12 contact">
+                        <h4>Sreejith Muralidharan</h4>
+                        <p style="margin:0">sreejith@ragam.org.in</p>
+                        <p>(+91) 9496461772</p>
                     </div>
                 </div>
             </div>
@@ -67,26 +67,33 @@
                     <hr class="light small mar-top-50 no-margin-bottom">
                 </div>
 
-                <form role="form" method="POST" action="#">
+                <form role="form" method="POST" name="queryForm" ng-submit="submitQuery(queryForm)">
                     <div class="row">
                         <div class="form-group col-lg-6">
-                            <label for="input1">Name</label>
-                            <input type="text" name="contact_name" class="form-control" id="input1">
+                            <label for="input1">* Name</label>
+                            <input ng-model="formData.contact_name" type="text" name="contact_name" class="form-control" id="input1">
                         </div>
                         <div class="form-group col-lg-6">
-                            <label for="input2">Email Address</label>
-                            <input type="email" name="contact_email" class="form-control" id="input2">
+                            <label for="input2">* Email Address</label>
+                            <input ng-model="formData.contact_email" type="email" name="contact_email" class="form-control" id="input2">
                         </div>
                         <div class="form-group col-lg-12">
-                            <label for="input4">Message</label>
-                            <textarea name="contact_message" class="form-control" rows="6" id="input4"></textarea>
+                            <label for="input2">College</label>
+                            <input ng-model="formData.contact_college" type="text" name="contact_college" class="form-control" id="input3">
                         </div>
                         <div class="form-group col-lg-12">
-                            <label for="input3">Simple Spam Checker: 5 + 7 = </label>
-                            <input type="text" name="contact_spam" class="form-control" id="input3">
+                            <label for="input4">* Message</label>
+                            <textarea ng-model="formData.contact_message" name="contact_message" class="form-control" rows="6" id="input4"></textarea>
                         </div>
                         <div class="form-group col-lg-12">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <label for="input3">* Simple Spam Checker: 5 + 7 =</label>
+                            <input type="text" ng-model="formData.contact_spam" name="contact_spam" class="form-control" id="input5">
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label>Fields marked by * are required</label>
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <button type="submit" class="btn btn-primary" >Submit</button>
                         </div>
                     </div>
                 </form>
